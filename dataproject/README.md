@@ -12,8 +12,11 @@ extend these data analysis features to any and all tables found in the DST api
 
 ## What is included, and how to get the best experience
 The repository contains:
+
 README.md	           : The file you are reading
+
 Project.py	           : The python file for the client
+
 Dataproject.ipynb      : The Jupyter notebook, which goes into the details of the Client.
 
 In order to get the best experience, we recommend you run the client from the project.py file.
@@ -23,8 +26,14 @@ We have however included the entire client in the last code cell, and the client
 
 ### Requirements
 The NokiaSnake Client requires the following libraries to run:
+
 tkinter     : pip install tkinter
+
 pandas      : pip intall pandas
+
 numpy       : pip intall numpy
+
 matplotlib  : pip install matplotlib
+
 pydst       : pip install git+https://github.com/elben10/pydst 
+
