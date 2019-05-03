@@ -1,39 +1,27 @@
 # Dataproject
 
-## The NokiaSnake Client
-Throughout our studies we have focused on explanatory analysis. For this dataproject we decided on a different 
-approach. The NokiaSnake Client is a tool to explore data. The Graphic User Interface allow for easy and interactive 
-data import. Furthermore, you can easily adjust the columns and categories in the dataset. Data analysis made easy.
+## Municipality Budget Planning
+Our project examines Danish municipalities' budgeting and their ability to predict net expenditure per capita. We further examine for any correlation
+between population size and the municipality's estimate for expenditure per capita. 
 
-## Current version
-The current version of the client supports custom table import from the DST api. We have also included a preloaded 
-dataset NAN1. We use this preloaded dataset to give a tour of data analysis features to come. It's our ambition to 
-extend these data analysis features to any and all tables found in the DST api
+The project can be read in [dataproject.ipynb](dataproject.ipynb). 
 
-## What is included, and how to get the best experience
-The repository contains:
+The project depends on NokiaSnakeClient.py to make some graphs. The entire folder must therefore be downloaded in order to make the notebook run.
+
+
+## The folder
 
 README.md	           : The file you are reading
 
-Project.py	           : The python file for the client
+NokiaSnakeClient.py	   : Custom WIP application for fetching, sorting and graphing data from the DST api. 
 
-Dataproject.ipynb      : The Jupyter notebook, which goes into the details of the Client.
+Dataproject.ipynb	   : The Jupyter notebook containing the project
 
-In order to get the best experience, we recommend you run the client from the project.py file.
-The file is incapable of being run snippet by snippet as presented in the Jupyter notebook. 
-We have however included the entire client in the last code cell, and the client can run from that cell.
+__init__.py		   : Required file in order to import classes and functions from NokiaSnakeClient.py
 
 
-### Requirements
-The NokiaSnake Client requires the following libraries to run:
+## Requirements
+The dataproject requires the following libraries to run: pydst, matplotlib, numpy, scipy, pandas. It further depends on The NokiaSnake Client, 
+which makes use of the tkinter library
 
-tkinter     : pip install tkinter
-
-pandas      : pip intall pandas
-
-numpy       : pip intall numpy
-
-matplotlib  : pip install matplotlib
-
-pydst       : pip install git+https://github.com/elben10/pydst 
 
