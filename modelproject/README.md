@@ -2,7 +2,7 @@
 
 ## Glosten-Milgrom Model
 In this project we derive and simulate the Glosten-Milgrom model for security markets. We further examine the proporties of the model. 
-Lastly we introduce several types of shock to the model and examine the adaptation of the equilibrium. 
+Lastly, we introduce several types of shock to the model and examine the adaptation of the equilibrium. 
 
 The project can be read in [modelproject.ipynb](modelproject.ipynb). 
 
