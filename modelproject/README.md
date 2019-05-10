@@ -1,39 +1,29 @@
-# Dataproject
+# Modelproject
 
-## The NokiaSnake Client
-Throughout our studies we have focused on explanatory analysis. For this dataproject we decided on a different 
-approach. The NokiaSnake Client is a tool to explore data. The Graphic User Interface allow for easy and interactive 
-data import. Furthermore, you can easily adjust the columns and categories in the dataset. Data analysis made easy.
+## Glosten-Milgrom Model
+In this project we derive and simulate the Glosten-Milgrom model for security markets. We further examine the proporties of the model. 
+Lastly we introduce several types of shock to the model and examine the adaptation of the equilibrium. 
 
-## Current version
-The current version of the client supports custom table import from the DST api. We have also included a preloaded 
-dataset NAN1. We use this preloaded dataset to give a tour of data analysis features to come. It's our ambition to 
-extend these data analysis features to any and all tables found in the DST api
+The project can be read in [modelproject.ipynb](modelproject.ipynb). 
 
-## What is included, and how to get the best experience
-The repository contains:
+The project depends on plotter.py to make some graphs. The entire folder must therefore be downloaded in order to make the notebook run.
+
+
+## The folder
 
 README.md	           : The file you are reading
 
-Project.py	           : The python file for the client
+plotter.py		   : Custom graphwindow library. 
 
-Dataproject.ipynb      : The Jupyter notebook, which goes into the details of the Client.
+Modelproject.ipynb	   : The Jupyter notebook containing the project
 
-In order to get the best experience, we recommend you run the client from the project.py file.
-The file is incapable of being run snippet by snippet as presented in the Jupyter notebook. 
-We have however included the entire client in the last code cell, and the client can run from that cell.
+__init__.py		   : Required file in order to import classes and functions from plotter.py
 
 
-### Requirements
-The NokiaSnake Client requires the following libraries to run:
+## Requirements
+The modelproject requires the following libraries to run: matplotlib, numpy, sympy, pandas. It further depends on The NokiaSnake Client, 
+which makes use of the tkinter and mpl-finance library.
 
-tkinter     : pip install tkinter
+you can get mpl-finance with : pip install mpl-finance
 
-pandas      : pip intall pandas
-
-numpy       : pip intall numpy
-
-matplotlib  : pip install matplotlib
-
-pydst       : pip install git+https://github.com/elben10/pydst 
 
