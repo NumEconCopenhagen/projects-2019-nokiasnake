@@ -21,9 +21,11 @@ __init__.py		   : Required file in order to import classes and functions from pl
 
 
 ## Requirements
-The modelproject requires the following libraries to run: matplotlib, numpy, sympy, pandas. It further depends on The NokiaSnake Client, 
+The modelproject requires the following libraries to run: matplotlib, numpy, sympy, pandas. It further depends on Plotter.py, 
 which makes use of the tkinter and mpl-finance library.
 
 you can get mpl-finance with : pip install mpl-finance
+
+tkinter should be baseline in anaconda 3.7. If you get errors, try : pip install tkinter
 
 
