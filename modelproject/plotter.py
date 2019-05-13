@@ -1,17 +1,13 @@
 import tkinter as tk
-from tkinter import ttk
 import pandas as pd 
 import numpy as np 
 
 import matplotlib
 matplotlib.use("TkAgg")
 from matplotlib import pyplot as plt
-from matplotlib import style
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from mpl_finance import candlestick_ochl
-import pydst
-
 
 
 class DataPlotter:
