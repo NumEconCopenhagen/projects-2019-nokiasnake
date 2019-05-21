@@ -1,7 +1,7 @@
+#importing necessary libraries. Check readme.md for installation tips
 import tkinter as tk
 import pandas as pd 
 import numpy as np 
-
 import matplotlib
 matplotlib.use("TkAgg")
 from matplotlib import pyplot as plt
@@ -9,50 +9,47 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from mpl_finance import candlestick_ochl
 
-
+#Define the dataplotter class responsible for drawing the figures used in the graphwindow
 class DataPlotter:
-    
+    #Defining the __init__ function
     def __init__(self,figure):
         
         self.fig = figure
         self.subplots = {}
     
     def addlineplot(self,data,plotname,**kwargs):
+        """Creates a line subplot for the dataplotter figure based on the data. 1st column
+        on horizontal axis, 2nd column on the vertical axis. 
+
+        Args:
+            data (Pandas DataFrame): 2-column dataframe. 
+            plotname (String): Name for the subplot
+            **kwargs
+        """
+
+        #Assign column name as variable
         axiskeys = data.keys()
         xaxisname = axiskeys[0]
         yaxisname = axiskeys[1]
+
+        #Construct the subplot 
         currentplot = self.fig.add_subplot(1,1,1)
         currentplot.plot(data[xaxisname],data[yaxisname], **kwargs)
         currentplot.set_xlabel(xaxisname)
         currentplot.set_ylabel(yaxisname)
         currentplot.grid(True)
         currentplot.legend()
+        
+        #Add the subplot to the subplot dictionary in __init__
         self.subplots[plotname]=currentplot
 
     def addcandlestick(self,data,plotname):
+        """Creates a candlestick subplot for the dataplotter figure based on the data
+        """
         currentplot = self.fig.add_subplot(1,1,1)
         candlestick_ochl(currentplot,data,colorup="g")
         currentplot.set_xlabel("Iteration")
         currentplot.grid(True)
-        self.subplots[plotname]=currentplot
-    
-    def addtwinxlineplot(self, data, plotname,color="b"):
-        axiskeys = data.keys()
-        xaxisname = axiskeys[0]
-        yaxisname = axiskeys[1]
-        currentplot = self.subplots[plotname].twinx()
-        currentplot.plot(data[xaxisname],data[yaxisname],color=color)
-        currentplot.set_ylabel(yaxisname)
-        self.subplots[plotname+"twinx"]=currentplot
-
-    def addbarplot(self,data,plotname, color="g"):
-        axiskeys = data.keys()
-        xaxisname = axiskeys[0]
-        yaxisname = axiskeys[1]
-        currentplot = self.fig.add_subplot(1,1,1)
-        currentplot.bar(data[xaxisname],data[yaxisname],color=color)
-        currentplot.set_xlabel(xaxisname)
-        currentplot.set_ylabel(yaxisname)
         self.subplots[plotname]=currentplot
     
     def figuretitle(self, figuretitle):
@@ -136,49 +133,3 @@ class PlotterWindow:
                 for index, yvariable in enumerate(self.yvariablelist):
                     self.plotter.addlineplot(newplotdata[[self.xvariable,yvariable]],"lineplot"+str(index+1), color="#FFA500")
             
-
-
-    #graphs = sorted(data[graphnames].unique())
-
-    
-    
-
-
-
-# if __name__ == "__main__":
-
-#     window = PlotterWindow(1280,720)
-#     window.start()
-
-
-
-
-
-
-#     data1 = pd.DataFrame({"diller":[1,2,3],  "z":[2,5,8], "dreng":[4,7,3]})    
-#     data2 = pd.DataFrame({"x":[1,2,3], "y":[3,1,9]}) 
-
-#     print(data1[["z","dreng"]])
-#     window = tk.Tk()
-#     def open_window(xsize,ysize):
-#        figure = Figure()
-#        canvas = FigureCanvasTkAgg(figure, window)
-#        toolbar = NavigationToolbar2Tk(canvas, window)
-        
-     #   graph = DataPlotter(figure)
-        #graph.addlineplot(data1[["dreng","z"]],"hobbit")
-        #graph.addtwinxlineplot(data2,"hobbit")
-      #  graph.figuretitle("Perle")
-        
-       # canvas.get_tk_widget().pack(side=tk.BOTTOM,fill=tk.BOTH, expand = True)
-        #toolbar.update()
-        #canvas._tkcanvas.pack(side=tk.TOP,fill=tk.BOTH, expand = True)
-
-        #button = tk.Button(window, text = "Clear", command = lambda: buttonclick(canvas,graph))
-        #button.pack()
-        #window.geometry(str(xsize) + "x" + str(ysize))
-        #canvas.draw()
-        
-    
-    #open_window(1280,720)
-    #window.mainloop()
