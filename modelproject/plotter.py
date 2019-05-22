@@ -1,4 +1,4 @@
-#importing necessary libraries. Check readme.md for installation tips
+#importing necessary libraries.
 import tkinter as tk
 import pandas as pd 
 import numpy as np 
@@ -9,10 +9,15 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from mpl_finance import candlestick_ochl
 
-#Define the dataplotter class responsible for drawing the figures used in the graphwindow
 class DataPlotter:
-    #Defining the __init__ function
+    """Creates a figure with subplots"""
+    
     def __init__(self,figure):
+        """__init__ constructor for DataPlotter class
+
+        Args:
+            figure (Matplotlib Figure): matplotlib Figure to add subplots to with DataPlotter
+        """
         
         self.fig = figure
         self.subplots = {}
@@ -24,7 +29,7 @@ class DataPlotter:
         Args:
             data (Pandas DataFrame): 2-column dataframe. 
             plotname (String): Name for the subplot
-            **kwargs
+            **kwargs: kwargs for the pyplot.plot method used to construct subplot.
         """
 
         #Assign column name as variable
@@ -32,7 +37,7 @@ class DataPlotter:
         xaxisname = axiskeys[0]
         yaxisname = axiskeys[1]
 
-        #Construct the subplot 
+        #Construct the line subplot 
         currentplot = self.fig.add_subplot(1,1,1)
         currentplot.plot(data[xaxisname],data[yaxisname], **kwargs)
         currentplot.set_xlabel(xaxisname)
@@ -45,6 +50,10 @@ class DataPlotter:
 
     def addcandlestick(self,data,plotname):
         """Creates a candlestick subplot for the dataplotter figure based on the data
+        
+        Args:
+            data (Pandas DataFrame): 2-column dataframe. 
+            plotname (String): Name for the subplot
         """
         currentplot = self.fig.add_subplot(1,1,1)
         candlestick_ochl(currentplot,data,colorup="g")
@@ -53,9 +62,13 @@ class DataPlotter:
         self.subplots[plotname]=currentplot
     
     def figuretitle(self, figuretitle):
+        """
+        """
         self.fig.suptitle(figuretitle)
 
     def clearplots(self):
+        """
+        """
         self.fig.clear()
         self.subplots.clear()
 
