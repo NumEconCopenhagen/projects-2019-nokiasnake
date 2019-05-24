@@ -153,7 +153,7 @@ class PlotterWindow:
             graphtype (string): graph type used to plot data. options = (standard)
 
             xvariable (string): name of column used as x variable in plot. Default None
-            yvariablelist (list of strings): name/s of column/s used as y variable/s in plot. Default None
+            yvariablelist (list of strings): name/s of column/s used as y variable/s in plot. Max 3 entries. Default None
             xsize (int): Define width of tk window. Default 1280
             ysize (int): Define height of tk window Default 720
         """
@@ -235,6 +235,10 @@ class PlotterWindow:
         
         #create standard plot
         if self.graphtype=="Standard":
-            self.plotter.addsplitbarplot(newplotdata[[self.xvariable,self.yvariablelist[0]]],"plot1")
-            self.plotter.addtwinxlineplot(newplotdata[[self.xvariable,self.yvariablelist[1]]],"plot1")
-        
+            self.plotter.addsplitbarplot(newplotdata[[self.xvariable, self.yvariablelist[0]]],"plot1")
+
+            if len(self.yvariablelist)>1:
+                self.plotter.addtwinxlineplot(newplotdata[[self.xvariable, self.yvariablelist[1]]],"plot1")
+
+            if len(self.yvariablelist)>2:
+                self.plotter.addtwinxlineplot(newplotdata[[self.xvariable, self.yvariablelist[2]]],"plot1")
