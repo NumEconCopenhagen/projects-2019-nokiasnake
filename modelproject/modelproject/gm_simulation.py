@@ -43,6 +43,7 @@ def gm_simulation(distribution=(0,1), decision="v_h", ratio=0.2, uninformed=0.5,
     values={}
     ratiovalues = []
     iteration = []
+    startvalues = []
     thetavalues = np.empty(iterations)
     muvalues = np.empty(iterations)
     askvalues = np.empty(iterations)
@@ -156,6 +157,7 @@ def gm_simulation(distribution=(0,1), decision="v_h", ratio=0.2, uninformed=0.5,
         #saving ratio and iteration values
         ratiovalues.append(str(ratio))
         iteration.append(int(i))
+        startvalues.append(str(startvalue))
         
         #off by one error
         break_index=i+1
@@ -169,6 +171,7 @@ def gm_simulation(distribution=(0,1), decision="v_h", ratio=0.2, uninformed=0.5,
     dataframe = pd.DataFrame()
     dataframe["Iteration"] = iteration
     dataframe["ratio"] = ratiovalues
+    dataframe["startvalue"] = startvalues
     dataframe["theta"] = thetavalues[0:break_index]
     dataframe["mu"] = muvalues[0:break_index]
     dataframe["ask"] = askvalues[0:break_index]

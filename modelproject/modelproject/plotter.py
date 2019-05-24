@@ -124,7 +124,7 @@ class PlotterWindow:
                     self.currentslicekey, *self.slicekeys, 
                     command = lambda x: self._ongraphmenuchange())
 
-        self.graphnamelabel = tk.Label(self.graphmenuframe, text="Pi=")
+        self.graphnamelabel = tk.Label(self.graphmenuframe, text=self.slicename+"=")
         #pack graphmenu and label
         self.graphnamelabel.pack(side=tk.LEFT)
         self.graphmenu.pack(side=tk.LEFT)
