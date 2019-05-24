@@ -70,8 +70,8 @@ class DataPlotter:
         Args:
             figuretitle (string): desired name of the figure
         """
-        #set figure subtitle
-        self.fig.subtitle(figuretitle)
+        #set figure suptitle
+        self.fig.suptitle(figuretitle)
 
     def clearplots(self):
         """Clear the figure and subplots"""
@@ -90,7 +90,7 @@ class PlotterWindow:
         Args:
             data (Pandas Dataframe): Dataframe used to create the plots
             slicename (string): name of column used to get slicekeys
-            graphtype (string): graph type used to plot data. options = (candlestick, piplot)
+            graphtype (string): graph type used to plot data. options = ("candlestick", "piplot")
 
             xvariable (string): name of column used as x variable in plot. Default None
             yvariablelist (list of strings): name/s of column/s used as y variable/s in plot. Default None
