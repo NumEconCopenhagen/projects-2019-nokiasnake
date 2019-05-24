@@ -248,8 +248,10 @@ class PlotterWindow:
         #create standard plot
         if self.graphtype=="Standard":
             self.plotter.addsplitbarplot(newplotdata[[self.xvariable, self.yvariablelist[0]]],"plot1")
-            self.plotter.addtwinxlineplot(newplotdata[[self.xvariable, self.yvariablelist[1:]]],"plot1")
-
+            if len(yvariablelist)==2:
+                self.plotter.addtwinxlineplot(newplotdata[[self.xvariable, self.yvariablelist[1]]],"plot1")
+            elif len(yvariablelist)==3:
+                self.plotter.addtwinxlineplot(newplotdata[[self.xvariable, self.yvariablelist[1], self.yvariablelist[2]]],"plot1")
             # if len(self.yvariablelist)>1:
                 
             # if len(self.yvariablelist)>2:
