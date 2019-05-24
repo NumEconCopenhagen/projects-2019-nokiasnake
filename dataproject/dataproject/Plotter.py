@@ -66,6 +66,7 @@ class DataPlotter:
         currentplot = self.subplots[plotname].twinx()
         currentplot.plot(data[xaxisname],data[yaxisname],color=color)
         currentplot.set_ylabel(yaxisname)
+        currentplot.legend()
 
         #Add the subplot to the subplot dictionary
         self.subplots[plotname+"twinx"]=currentplot
