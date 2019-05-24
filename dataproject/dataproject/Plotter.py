@@ -174,7 +174,7 @@ class PlotterWindow:
         self.currentslicekey = tk.StringVar()
         
         #get slicekeys from slicename column
-        self.slicekeys = (self.data[self.slicename].unique())
+        self.slicekeys = sorted((self.data[self.slicename].unique()))
 
         #Create frame in self.window for graphmenu and graphnamelabel
         self.graphmenuframe = tk.Frame(self.window)
