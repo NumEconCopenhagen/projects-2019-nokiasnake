@@ -48,35 +48,24 @@ class DataPlotter:
         #Add the subplot to the subplot dictionary in __init__
         self.subplots[plotname]=currentplot
     
-    def addtwinxlineplot(self, data, plotname, color="b", color2="r"):
+    def addtwinxlineplot(self, data, plotname, color="b"):
         """Create a line subplot on the secondary y-axis in the DataPlotter figure.
 
         Args:
             data (Pandas DataFrame): 2-column dataframe. 
             plotname (String): Name for the subplot
             color (string): Color of lineplot. Default b
-            color2 (string): Color of optional second lineplot. Default r
         """
         
         #Assign column name as variable
         axiskeys = data.keys()
         xaxisname = axiskeys[0]
         yaxisname = axiskeys[1]
-        
-        #add option for second lineplot
-        if len(axiskeys)==3:
-            y2axisname = axiskeys[2]
 
         #Construct the line subplot
         currentplot = self.subplots[plotname].twinx()
         currentplot.plot(data[xaxisname],data[yaxisname],color=color)
         currentplot.set_ylabel(yaxisname)
-
-        #if second y variable is present, plot it and change label
-        if len(axiskeys)==3:
-            currentplot.plot(data[xaxisname],data[y2axisname],color="r")
-            currentplot.set_ylabel(yaxisname+" and "+y2axisname)
-        
         currentplot.legend()
 
         #Add the subplot to the subplot dictionary
@@ -248,11 +237,9 @@ class PlotterWindow:
         #create standard plot
         if self.graphtype=="Standard":
             self.plotter.addsplitbarplot(newplotdata[[self.xvariable, self.yvariablelist[0]]],"plot1")
-            if len(self.yvariablelist)==2:
+
+            if len(self.yvariablelist)>1:
                 self.plotter.addtwinxlineplot(newplotdata[[self.xvariable, self.yvariablelist[1]]],"plot1")
-            elif len(self.yvariablelist)==3:
-                self.plotter.addtwinxlineplot(newplotdata[[self.xvariable, self.yvariablelist[1], self.yvariablelist[2]]],"plot1")
-            # if len(self.yvariablelist)>1:
-                
-            # if len(self.yvariablelist)>2:
-            #     self.plotter.addtwinxlineplot(newplotdata[[self.xvariable, self.yvariablelist[2]]],"plot1",color="r")
+
+            if len(self.yvariablelist)>2:
+                self.plotter.addtwinxlineplot(newplotdata[[self.xvariable, self.yvariablelist[2]]],"plot1",color="r")
