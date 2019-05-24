@@ -242,4 +242,4 @@ class PlotterWindow:
                 self.plotter.addtwinxlineplot(newplotdata[[self.xvariable, self.yvariablelist[1]]],"plot1")
 
             if len(self.yvariablelist)>2:
-                self.plotter.addtwinxlineplot(newplotdata[[self.xvariable, self.yvariablelist[2]]],"plot1")
+                self.plotter.addtwinxlineplot(newplotdata[[self.xvariable, self.yvariablelist[2]]],"plot1",color="r")
