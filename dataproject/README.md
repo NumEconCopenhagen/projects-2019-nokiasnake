@@ -6,22 +6,20 @@ between population size and the municipality's estimate for expenditure per capi
 
 The project can be read in [dataproject.ipynb](dataproject.ipynb). 
 
-The project depends on NokiaSnakeClient.py to make some graphs. The entire folder must therefore be downloaded in order to make the notebook run.
+The project depends on plotter.py to make some graphs. The entire folder must therefore be downloaded in order to make the notebook run.
 
 
 ## The folder
 
 README.md	           : The file you are reading
 
-NokiaSnakeClient.py	   : Custom WIP application for fetching, sorting and graphing data from the DST api. 
+dataproject (folder)	   : dataproject module containing custom python modules 
 
 Dataproject.ipynb	   : The Jupyter notebook containing the project
 
-__init__.py		   : Required file in order to import classes and functions from NokiaSnakeClient.py
-
 
 ## Requirements
-The dataproject requires the following libraries to run: pydst, matplotlib, numpy, scipy, pandas. It further depends on The NokiaSnake Client, 
+The dataproject requires the following libraries to run: pydst, matplotlib, numpy, scipy, pandas. It further depends on the Plotter.py module, 
 which makes use of the tkinter library
 
 

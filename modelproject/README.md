@@ -13,11 +13,9 @@ The project depends on plotter.py to make some graphs. The entire folder must th
 
 README.md	           : The file you are reading
 
-plotter.py		   : Custom graphwindow library. 
+modelproject (folder)	   : modelproject moduel containing custom python files 
 
 Modelproject.ipynb	   : The Jupyter notebook containing the project
-
-__init__.py		   : Required file in order to import classes and functions from plotter.py
 
 
 ## Requirements

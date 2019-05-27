@@ -98,7 +98,6 @@ class PlotterWindow:
             ysize (int): Define height of tk window Default 720
         """
         
-        #attributes
         self.xsize = xsize
         self.ysize = ysize
         self.data = data

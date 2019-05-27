@@ -1,0 +1,23 @@
+Feedback group: nokiasnake
+
+Exam number: 85
+
+Data project:
+https://github.com/NumEconCopenhagen/projects-2019-mcb/issues/5
+https://github.com/NumEconCopenhagen/projects-2019-mec/issues/6
+
+Model project:
+https://github.com/NumEconCopenhagen/projects-2019-cl/issues/8
+https://github.com/NumEconCopenhagen/projects-2019-credible-threats/issues/12
+
+
+Exam number: 93
+
+Data project:
+https://github.com/NumEconCopenhagen/projects-2019-pickles/issues/4
+https://github.com/NumEconCopenhagen/projects-2019-goldmeyer-seiss-slaar-markedet/issues/5
+
+Model project:
+https://github.com/NumEconCopenhagen/projects-2019-mk/issues/7
+https://github.com/NumEconCopenhagen/projects-2019-adu/issues/3
+
